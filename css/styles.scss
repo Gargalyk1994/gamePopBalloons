@@ -1,0 +1,84 @@
+$quantityBalloons: 10;
+$widthBallon: 120px;
+
+.body {
+    counter-reset: count;
+    height: 100vh;
+    margin: 0;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+
+@for $i from 1 through $quantityBalloons{
+    @keyframes balloon-fly-#{$i} {
+        0% {
+            left: random(90)+vw;
+            bottom: -$widthBallon;
+        }
+        25%{
+            left: random(90)+vw;
+            bottom: random(50)+vh;
+        }
+        50%{
+            left: random(90)+vw;
+            bottom: random(80)+vh;
+        }
+        100% {
+            left: random(90)+vw;
+            bottom: 100vh;
+        }
+    }
+}
+
+.balloons{
+    &__check{
+        position: absolute;
+        visibility: hidden;
+        left: -9999999999px; //скрыть checkboxы
+        &:checked{
+            counter-increment: count;
+        }
+        &:checked ~ label{
+            display: none;
+        }
+    }
+    &__balloon{
+        position: absolute;
+        svg{
+            width: $widthBallon;
+            height: $widthBallon;
+        }
+        &:hover{
+            cursor: crosshair;
+        }
+    @for $i from 1 through $quantityBalloons{
+        &_#{$i}{
+            animation: balloon-fly-#{$i} 8s ease-in #{$i+3}s both; //после ease-in генерируется задержка в сек вылета каждого шара
+            svg path:nth-of-type(1){
+                fill: rgb(random(256), random(256), random(256));
+            }
+        }
+    }
+    }
+}
+
+
+
+
+.count{
+    color: firebrick;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    position: absolute;
+    top: 24px;
+    right: 14px;
+    &::before{
+        content: counter(count);
+    }
+}

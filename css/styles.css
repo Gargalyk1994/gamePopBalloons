@@ -1,0 +1,285 @@
+.body {
+  counter-reset: count;
+  height: 100vh;
+  margin: 0;
+  background-image: url(../images/background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@keyframes balloon-fly-1 {
+  0% {
+    left: 48vw;
+    bottom: -120px;
+  }
+  25% {
+    left: 89vw;
+    bottom: 11vh;
+  }
+  50% {
+    left: 52vw;
+    bottom: 39vh;
+  }
+  100% {
+    left: 11vw;
+    bottom: 100vh;
+  }
+}
+@keyframes balloon-fly-2 {
+  0% {
+    left: 8vw;
+    bottom: -120px;
+  }
+  25% {
+    left: 38vw;
+    bottom: 4vh;
+  }
+  50% {
+    left: 29vw;
+    bottom: 53vh;
+  }
+  100% {
+    left: 30vw;
+    bottom: 100vh;
+  }
+}
+@keyframes balloon-fly-3 {
+  0% {
+    left: 33vw;
+    bottom: -120px;
+  }
+  25% {
+    left: 28vw;
+    bottom: 46vh;
+  }
+  50% {
+    left: 33vw;
+    bottom: 5vh;
+  }
+  100% {
+    left: 51vw;
+    bottom: 100vh;
+  }
+}
+@keyframes balloon-fly-4 {
+  0% {
+    left: 64vw;
+    bottom: -120px;
+  }
+  25% {
+    left: 48vw;
+    bottom: 14vh;
+  }
+  50% {
+    left: 87vw;
+    bottom: 44vh;
+  }
+  100% {
+    left: 26vw;
+    bottom: 100vh;
+  }
+}
+@keyframes balloon-fly-5 {
+  0% {
+    left: 33vw;
+    bottom: -120px;
+  }
+  25% {
+    left: 47vw;
+    bottom: 43vh;
+  }
+  50% {
+    left: 81vw;
+    bottom: 30vh;
+  }
+  100% {
+    left: 69vw;
+    bottom: 100vh;
+  }
+}
+@keyframes balloon-fly-6 {
+  0% {
+    left: 16vw;
+    bottom: -120px;
+  }
+  25% {
+    left: 45vw;
+    bottom: 31vh;
+  }
+  50% {
+    left: 67vw;
+    bottom: 72vh;
+  }
+  100% {
+    left: 19vw;
+    bottom: 100vh;
+  }
+}
+@keyframes balloon-fly-7 {
+  0% {
+    left: 90vw;
+    bottom: -120px;
+  }
+  25% {
+    left: 31vw;
+    bottom: 17vh;
+  }
+  50% {
+    left: 37vw;
+    bottom: 49vh;
+  }
+  100% {
+    left: 51vw;
+    bottom: 100vh;
+  }
+}
+@keyframes balloon-fly-8 {
+  0% {
+    left: 43vw;
+    bottom: -120px;
+  }
+  25% {
+    left: 9vw;
+    bottom: 26vh;
+  }
+  50% {
+    left: 79vw;
+    bottom: 80vh;
+  }
+  100% {
+    left: 65vw;
+    bottom: 100vh;
+  }
+}
+@keyframes balloon-fly-9 {
+  0% {
+    left: 81vw;
+    bottom: -120px;
+  }
+  25% {
+    left: 78vw;
+    bottom: 6vh;
+  }
+  50% {
+    left: 5vw;
+    bottom: 72vh;
+  }
+  100% {
+    left: 53vw;
+    bottom: 100vh;
+  }
+}
+@keyframes balloon-fly-10 {
+  0% {
+    left: 48vw;
+    bottom: -120px;
+  }
+  25% {
+    left: 80vw;
+    bottom: 12vh;
+  }
+  50% {
+    left: 16vw;
+    bottom: 16vh;
+  }
+  100% {
+    left: 40vw;
+    bottom: 100vh;
+  }
+}
+.balloons__check {
+  position: absolute;
+  visibility: hidden;
+  left: -9999999999px;
+}
+.balloons__check:checked {
+  counter-increment: count;
+}
+.balloons__check:checked ~ label {
+  display: none;
+}
+.balloons__balloon {
+  position: absolute;
+}
+.balloons__balloon svg {
+  width: 120px;
+  height: 120px;
+}
+.balloons__balloon:hover {
+  cursor: crosshair;
+}
+.balloons__balloon_1 {
+  animation: balloon-fly-1 8s ease-in 4s both;
+}
+.balloons__balloon_1 svg path:nth-of-type(1) {
+  fill: rgb(116, 255, 54);
+}
+.balloons__balloon_2 {
+  animation: balloon-fly-2 8s ease-in 5s both;
+}
+.balloons__balloon_2 svg path:nth-of-type(1) {
+  fill: rgb(172, 144, 174);
+}
+.balloons__balloon_3 {
+  animation: balloon-fly-3 8s ease-in 6s both;
+}
+.balloons__balloon_3 svg path:nth-of-type(1) {
+  fill: rgb(48, 190, 125);
+}
+.balloons__balloon_4 {
+  animation: balloon-fly-4 8s ease-in 7s both;
+}
+.balloons__balloon_4 svg path:nth-of-type(1) {
+  fill: rgb(245, 165, 65);
+}
+.balloons__balloon_5 {
+  animation: balloon-fly-5 8s ease-in 8s both;
+}
+.balloons__balloon_5 svg path:nth-of-type(1) {
+  fill: rgb(63, 44, 10);
+}
+.balloons__balloon_6 {
+  animation: balloon-fly-6 8s ease-in 9s both;
+}
+.balloons__balloon_6 svg path:nth-of-type(1) {
+  fill: rgb(93, 113, 117);
+}
+.balloons__balloon_7 {
+  animation: balloon-fly-7 8s ease-in 10s both;
+}
+.balloons__balloon_7 svg path:nth-of-type(1) {
+  fill: rgb(201, 228, 141);
+}
+.balloons__balloon_8 {
+  animation: balloon-fly-8 8s ease-in 11s both;
+}
+.balloons__balloon_8 svg path:nth-of-type(1) {
+  fill: rgb(217, 223, 102);
+}
+.balloons__balloon_9 {
+  animation: balloon-fly-9 8s ease-in 12s both;
+}
+.balloons__balloon_9 svg path:nth-of-type(1) {
+  fill: rgb(118, 25, 173);
+}
+.balloons__balloon_10 {
+  animation: balloon-fly-10 8s ease-in 13s both;
+}
+.balloons__balloon_10 svg path:nth-of-type(1) {
+  fill: rgb(141, 91, 9);
+}
+
+.count {
+  color: firebrick;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  position: absolute;
+  top: 24px;
+  right: 14px;
+}
+.count::before {
+  content: counter(count);
+}/*# sourceMappingURL=styles.css.map */
